@@ -1,0 +1,122 @@
+@startuml
+    class Asistente {
+        - int id_asistente
+        - String nombre
+        - String especialidad
+        - String telefono
+        - String direccion
+        - String email
+        + Asistente(int, String, String, String, String, String)
+        + Asistente()
+        + int getId_asistente()
+        + void setId_asistente(int)
+        + String getNombre()
+        + void setNombre(String)
+        + String getEspecialidad()
+        + void setEspecialidad(String)
+        + String getTelefono()
+        + void setTelefono(String)
+        + String getDireccion()
+        + void setDireccion(String)
+        + String getEmail()
+        + void setEmail(String)
+        + String toString()
+    }
+
+    class AsistentePersona {
+        - int personaId
+        - int asistenteId
+        + AsistentePersona()
+        + AsistentePersona(int, int)
+        + int getPersonaId()
+        + void setPersonaId(int)
+        + int getAsistenteId()
+        + void setAsistenteId(int)
+    }
+
+    class Padecimiento {
+        - int id_padecimiento
+        - String nombre
+        - String descripcion
+        - String gravedad
+        + Padecimiento(int, String, String, String)
+        + int getId_padecimiento()
+        + void setId_padecimiento(int)
+        + String getDescripcion()
+        + void setDescripcion(String)
+        + String getNombre()
+        + void setNombre(String)
+        + String getGravedad()
+        + void setGravedad(String)
+        + String toString()
+    }
+
+    class PadecimientoPersona {
+        - int id_persona
+        - int id_padecimiento
+        + PadecimientoPersona()
+        + PadecimientoPersona(int, int)
+        + int getId_persona()
+        + void setId_persona(int)
+        + int getId_padecimiento()
+        + void setId_padecimiento(int)
+    }
+
+    class Persona {
+        - int id_persona
+        - String nombre
+        - String direccion
+        - String telefono
+        - String email
+        - String dni
+        - String fecha_nacimiento
+        + Persona()
+        + Persona(int, String, String, String, String, String, String)
+        + int getId_persona()
+        + void setId_persona(int)
+        + String getNombre()
+        + void setNombre(String)
+        + String getDireccion()
+        + void setDireccion(String)
+        + String getTelefono()
+        + void setTelefono(String)
+        + String getEmail()
+        + void setEmail(String)
+        + String getDni()
+        + void setDni(String)
+        + String getfecha_nacimiento()
+        + void setfecha_nacimiento(String)
+        + String toString()
+    }
+
+    class RegistroLlamada {
+        - int id_llamada
+        - int id_persona
+        - int id_asistente
+        - String fecha
+        - String hora
+        - String duracion
+        + RegistroLlamada()
+        + RegistroLlamada(int, int, int, String, String, String)
+        + int getId_llamada()
+        + void setId_llamada(int)
+        + int getId_persona()
+        + void setId_persona(int)
+        + int getId_asistente()
+        + void setId_asistente(int)
+        + String getFecha()
+        + void setFecha(String)
+        + String getHora()
+        + void setHora(String)
+        + String getDuracion()
+        + void setDuracion(String)
+    }
+
+    Persona "1" --> "0..*" AsistentePersona
+    Asistente "1" --> "0..*" AsistentePersona
+    Persona "1" --> "0..*" PadecimientoPersona
+    Padecimiento "1" --> "0..*" PadecimientoPersona
+    Persona "1" --> "0..*" RegistroLlamada
+    Asistente "1" --> "0..*" RegistroLlamada
+}
+@enduml

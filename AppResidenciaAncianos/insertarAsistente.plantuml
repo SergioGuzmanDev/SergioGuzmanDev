@@ -1,0 +1,21 @@
+@startuml
+actor Usuario
+Usuario -> AsistenteDAO: insertarAsistente(asistente)
+activate AsistenteDAO
+AsistenteDAO -> Conexion: getConnection()
+activate Conexion
+Conexion --> AsistenteDAO: conn
+deactivate Conexion
+AsistenteDAO -> conn: prepareStatement(sql)
+activate conn
+AsistenteDAO -> pstmt: setString(1, asistente.getNombre())
+AsistenteDAO -> pstmt: setString(2, asistente.getEspecialidad())
+AsistenteDAO -> pstmt: setString(3, asistente.getTelefono())
+AsistenteDAO -> pstmt: setString(4, asistente.getDireccion())
+AsistenteDAO -> pstmt: setString(5, asistente.getEmail())
+AsistenteDAO -> pstmt: executeUpdate()
+pstmt --> AsistenteDAO: affectedRows
+deactivate conn
+AsistenteDAO --> Usuario: return (affectedRows > 0)
+deactivate AsistenteDAO
+@enduml

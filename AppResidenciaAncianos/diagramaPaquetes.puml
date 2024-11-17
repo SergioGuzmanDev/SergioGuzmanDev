@@ -1,0 +1,49 @@
+@startuml
+package "com.proyectodam" {
+  package "dao" {
+    class AsistenteDAO
+    class AsistentePersonaDAO
+    class Conexion
+    class PadecimientoDAO
+    class PadecimientoPersonaDAO
+    class PersonaDAO
+    class RegistroLlamadaDAO
+  }
+
+  package "dto" {
+    class Asistente
+    class AsistentePersona
+    class Padecimiento
+    class PadecimientoPersona
+    class Persona
+    class RegistroLlamada
+  }
+
+  package "negocio" {
+    class GestorAncianos
+  }
+
+  package "ui" {
+    class AncianoGUI
+  }
+
+  class Main
+  class AppTest
+}
+
+Main --> Asistente
+AppTest --> Asistente
+Asistente --> AsistenteDAO
+Asistente --> AsistentePersona
+AsistentePersona --> AsistentePersonaDAO
+AsistentePersona --> Padecimiento
+Padecimiento --> PadecimientoDAO
+Padecimiento --> PadecimientoPersona
+PadecimientoPersona --> PadecimientoPersonaDAO
+PadecimientoPersona --> Persona
+Persona --> PersonaDAO
+Persona --> RegistroLlamada
+RegistroLlamada --> RegistroLlamadaDAO
+GestorAncianos --> Persona
+AncianoGUI --> GestorAncianos
+@enduml
