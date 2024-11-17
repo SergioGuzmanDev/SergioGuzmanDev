@@ -1,0 +1,27 @@
+@startuml
+actor "Usuario" as Usuario
+
+Usuario -> (Insertar Asistente)
+Usuario -> (Actualizar Asistente)
+Usuario -> (Eliminar Asistente)
+Usuario -> (Obtener Todos Asistentes)
+Usuario -> (Obtener Teléfono Asistente)
+Usuario -> (Verificar Teléfono Asistente)
+
+Usuario -> (Insertar AsistentePersona)
+Usuario -> (Obtener Teléfono Asistente Persona)
+Usuario -> (Obtener Teléfono Persona)
+
+Usuario -> (Agregar Padecimiento)
+Usuario -> (Actualizar Padecimiento)
+Usuario -> (Eliminar Padecimiento)
+Usuario -> (Obtener Todos Padecimientos)
+
+Usuario -> (Insertar PadecimientoPersona)
+
+Usuario -> (Insertar Persona)
+Usuario -> (Actualizar Persona)
+Usuario -> (Eliminar Persona)
+Usuario -> (Obtener Todas Personas)
+
+@enduml

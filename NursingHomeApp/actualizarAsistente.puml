@@ -1,0 +1,22 @@
+@startuml
+actor Usuario
+Usuario -> AsistenteDAO: actualizarAsistente(antiguoNombre, nuevoNombre, nuevaEspecialidad, nuevoTelefono, nuevaDireccion, nuevoEmail)
+activate AsistenteDAO
+AsistenteDAO -> Conexion: getConnection()
+activate Conexion
+Conexion --> AsistenteDAO: conn
+deactivate Conexion
+AsistenteDAO -> conn: prepareStatement(sql)
+activate conn
+AsistenteDAO -> pstmt: setString(1, nuevoNombre)
+AsistenteDAO -> pstmt: setString(2, nuevaEspecialidad)
+AsistenteDAO -> pstmt: setString(3, nuevoTelefono)
+AsistenteDAO -> pstmt: setString(4, nuevaDireccion)
+AsistenteDAO -> pstmt: setString(5, nuevoEmail)
+AsistenteDAO -> pstmt: setString(6, antiguoNombre)
+AsistenteDAO -> pstmt: executeUpdate()
+pstmt --> AsistenteDAO: affectedRows
+deactivate conn
+AsistenteDAO --> Usuario: return (affectedRows > 0)
+deactivate AsistenteDAO
+@enduml
