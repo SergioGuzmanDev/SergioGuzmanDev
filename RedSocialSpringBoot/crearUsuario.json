@@ -1,0 +1,8 @@
+{
+    "nombre": "Juan",
+    "apellido": "Perez",
+    "correo": "juan.perez@example.com",
+    "contrasenia": "password123",
+    "telefono": "11111",
+    "imagen": "aaaa"
+}
