@@ -10,7 +10,7 @@
 
 - 🌱 I’m currently learning **Python, Laravel, Odoo, Ionic, Vue, Django**
 
-- 💬 Ask me about **Java, C, C++, HTML, CSS, ARM, JavaScript**
+- 💬 Ask me about **Kotlin, Java, C, C++, C#, HTML, CSS, ARM, JavaScript**
 
 - 📫 How to reach me **sergio.guzmancanete@gmail.com**
 
