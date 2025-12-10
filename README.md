@@ -8,9 +8,9 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=sergioguzmandev&label=Profile%20views&color=0e75b6&style=flat" alt="sergioguzmandev" /> </p>
 
-- 🌱 I’m currently learning **Python, Laravel, Odoo, Ionic, Vue, Django**
+- 🌱 I’m currently learning **Python, Laravel, Odoo, Vue, Django**
 
-- 💬 Ask me about **Kotlin, Java, C, C++, C#, HTML, CSS, ARM, JavaScript**
+- 💬 Ask me about **Java, Kotlin, C++, C#**
 
 - 📫 How to reach me **sergio.guzmancanete@gmail.com**
 
